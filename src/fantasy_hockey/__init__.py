@@ -9,9 +9,11 @@ from fantasy_hockey.models import (
     TeamStanding,
 )
 from fantasy_hockey.ranking import (
+    Position,
     PositionAdjustedRanker,
     RankingStrategy,
     TotalPointsRanker,
+    ValueOverReplacementRanker,
 )
 
 __all__ = [
@@ -21,7 +23,9 @@ __all__ = [
     "RedraftComparison",
     "RedraftResult",
     "TeamStanding",
+    "Position",
     "PositionAdjustedRanker",
     "RankingStrategy",
     "TotalPointsRanker",
+    "ValueOverReplacementRanker",
 ]

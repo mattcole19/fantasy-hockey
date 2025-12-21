@@ -65,3 +65,7 @@ class RedraftResult(BaseModel):
     ranked_players: list[Player] = Field(
         description="All players ranked by the strategy (best first)"
     )
+    strategy_name: str = Field(description="Name of the ranking strategy used")
+    strategy_description: str = Field(
+        description="Description of how the ranking strategy works"
+    )

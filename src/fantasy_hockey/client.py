@@ -135,7 +135,12 @@ class FantasyHockeyClient:
             )
             comparisons.append(comparison)
 
-        return RedraftResult(comparisons=comparisons, ranked_players=ranked_players)
+        return RedraftResult(
+            comparisons=comparisons,
+            ranked_players=ranked_players,
+            strategy_name=strategy.name,
+            strategy_description=strategy.description,
+        )
 
     def _get_player_points(self) -> dict[int, float]:
         """Get total fantasy points for all players across the season.
