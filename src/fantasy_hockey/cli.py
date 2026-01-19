@@ -5,6 +5,7 @@ import sys
 from fantasy_hockey.client import FantasyHockeyClient
 
 DEFAULT_ROUNDS = 1
+DEFAULT_REDRAFT_STRATEGY = "vor"
 
 
 def print_standings(client: FantasyHockeyClient) -> None:
@@ -198,7 +199,7 @@ def parse_strategy_arg(args: list[str]) -> str:
             return args[i + 1].lower()
         if arg.startswith("--strategy="):
             return arg.split("=")[1].lower()
-    return "vor"  # Default to VOR
+    return DEFAULT_REDRAFT_STRATEGY  # Default to VOR
 
 
 def get_strategy(strategy_name: str):
@@ -261,7 +262,7 @@ def main() -> int:
                     file=sys.stderr,
                 )
                 print(
-                    "  --strategy NAME   Ranking strategy: vor, total, adjusted",
+                    "  --strategy NAME   Ranking strategy: vor (default), total, adjusted",
                     file=sys.stderr,
                 )
                 return 1
